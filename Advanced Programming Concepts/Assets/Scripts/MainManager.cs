@@ -20,6 +20,10 @@ public class MainManager : MonoBehaviour
 
         //making this object persistent
         DontDestroyOnLoad(gameObject);
+
+        loadColour();
+        Debug.Log(Application.persistentDataPath + "/savefile.json");
+            
     }
 
     private void Update()
