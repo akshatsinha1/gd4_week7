@@ -10,7 +10,23 @@ public class ResourcePile : Building
 {
     public ResourceItem Item;
 
-    public float ProductionSpeed = 0.5f;
+    private float _productionSpeed = 0.5f;
+
+    public float ProductionSpeed
+    {
+        get { return _productionSpeed; }
+        set
+        {
+            if(value < 0)
+            {
+                Debug.LogError("Productivity Speed cannot be less than zero");
+            }
+            else
+            {
+                _productionSpeed = value;
+            }
+        }
+    }
 
     private float m_CurrentProduction = 0.0f;
 
